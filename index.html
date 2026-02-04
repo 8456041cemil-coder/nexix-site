@@ -1,145 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXIX - Transformamos Imagens em Vendas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEXIX — Transformamos imagens em vendas</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0f1a;
-    color: white;
-}
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0E1426;
+      --panel2:#0B1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --stroke:rgba(255,255,255,.08);
+      --glow:rgba(124, 92, 255, .35);
+      --cyan: #43D8FF;
+      --purple:#7C5CFF;
+      --purple2:#A14CFF;
+      --blue:#2D7DFF;
+      --radius:18px;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
 
-header {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #0b0f1a, #121a2e);
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      background: radial-gradient(1200px 600px at 50% 0%, rgba(124,92,255,.22), transparent 60%),
+                  radial-gradient(900px 450px at 15% 35%, rgba(67,216,255,.14), transparent 60%),
+                  radial-gradient(900px 450px at 85% 55%, rgba(161,76,255,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
+    }
 
-h1 {
-    font-size: 40px;
-    color: #cfd8ff;
-}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 22px}
 
-h2 {
-    color: #8aa0ff;
-}
+    /* Top Nav */
+    .nav{
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(7,10,18,.7), rgba(7,10,18,.25));
+      border-bottom:1px solid rgba(255,255,255,.06);
+      z-index:10;
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.10em;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      box-shadow: 0 0 18px rgba(67,216,255,.35);
+    }
+    .nav-links{
+      display:flex; gap:18px; font-size:14px; color:var(--muted);
+    }
+    .nav-links a{padding:8px 10px; border-radius:999px}
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
 
-.btn {
-    background: linear-gradient(90deg, #6a7cff, #8a2be2);
-    border: none;
-    padding: 15px 30px;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-}
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.10);
+      transition: transform .15s ease, background .2s ease, border .2s ease, box-shadow .2s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+      font-size:14px;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: linear-gradient(90deg, var(--purple), var(--purple2));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 16px 40px rgba(124,92,255,.25);
+    }
+    .btn-primary:hover{
+      box-shadow: 0 18px 48px rgba(124,92,255,.33);
+      transform: translateY(-1px);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .btn-ghost:hover{background: rgba(255,255,255,.07); transform: translateY(-1px)}
+    .btn-block{width:100%}
 
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background: #151c2f;
-    padding: 25px;
-    border-radius: 12px;
-    width: 250px;
-}
-
-.pricing {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.price-card {
-    background: #1a2238;
-    padding: 30px;
-    border-radius: 15px;
-    width: 260px;
-}
-
-footer {
-    background: #0b0f1a;
-    padding: 40px;
-    text-align: center;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Transformamos imagens em vendas</h1>
-    <p>Edição profissional, Inteligência Artificial e Posicionamento Digital</p>
-    <button class="btn">Quero melhorar minhas fotos</button>
-</header>
-
-<section class="section">
-    <h2>Sobre a NEXIX</h2>
-    <p>Ajudamos restaurantes e negócios locais a vender mais através de imagens profissionais, inteligência artificial e posicionamento digital estratégico.</p>
-</section>
-
-<section class="section">
-    <h2>Serviços</h2>
-    <div class="cards">
-        <div class="card">Edição de Imagens</div>
-        <div class="card">IA para Restaurantes</div>
-        <div class="card">Posicionamento Digital</div>
-        <div class="card">Identidade Visual</div>
-        <div class="card">Fotos para Delivery</div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Antes e Depois</h2>
-    <p>Espaço para comparação de imagens de comida.</p>
-</section>
-
-<section class="section">
-    <h2>Depoimentos</h2>
-    <p>“Depois das fotos da NEXIX, minhas vendas aumentaram!”</p>
-</section>
-
-<section class="section">
-    <h2>Planos e Preços</h2>
-    <div class="pricing">
-        <div class="price-card">
-            <h3>Básico</h3>
-            <p>R$ 80</p>
-        </div>
-        <div class="price-card">
-            <h3>Profissional</h3>
-            <p>R$ 160</p>
-        </div>
-        <div class="price-card">
-            <h3>Premium</h3>
-            <p>R$ 280</p>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Seu negócio merece imagens profissionais</h2>
-    <button class="btn">Entrar em Contato</button>
-</section>
-
-<footer>
-    <p>NEXIX © Todos os direitos reservados</p>
-</footer>
-
-</body>
-</html>
+    /* Hero */
+    .hero{
+      padding:58px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:center;
+      padding:34px;
+      border-radius: calc(var(--radius) + 10px);
+      background:
+        radial-gradient(900px 420px at 50% 0%, rgba(124,92,255,.25), transparent 55%),
+        radial-gradient(700px 350px at 90% 35%, rgba(67,216,255,.12), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 260px at 50% 10%, rgba(124,92,255,.18), transparent 60%);
+      pointer-events:none;
+      filter
