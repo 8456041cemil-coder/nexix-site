@@ -1,11 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>NEXIX Teste</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXIX — Transformamos imagens em vendas</title>
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --bg2:#11172a;
+  --primary:#7c4dff;
+  --secondary:#00e5ff;
+  --text:#ffffff;
+  --muted:#b5b8c5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1f3c, var(--bg));
+  color: var(--text);
+}
+
+section{padding:100px 20px}
+.container{max-width:1200px;margin:auto}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:140px 20px;
+}
+
+.hero h1{
+  font-size:3.2rem;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+.hero .btns{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 32px;
+  border-radius:30px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.btn.outline{
+  background:transparent;
+  border:1px solid var(--primary);
+}
+
+/* INFO */
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.box{
+  background:linear-gradient(180deg,#151b35,#0e1326);
+  padding:30px;
+  border-radius:16px;
+}
+
+/* SERVICES */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:linear-gradient(180deg,#151b35,#0e1326);
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.card h3{margin-top:15px}
+
+/* BEFORE AFTER */
+.compare{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+.compare img{
+  width:100%;
+  max-width:700px;
+  border-radius:20px;
+}
+
+/* PRICING */
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.price{
+  background:linear-gradient(180deg,#151b35,#0e1326);
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.price.featured{
+  border:2px solid var(--primary);
+}
+
+.price h3{margin-bottom:10px}
+.price span{
+  font-size:2rem;
+  color:var(--secondary);
+}
+
+/* CONTACT */
+form{
+  display:grid;
+  gap:15px;
+}
+
+input,textarea{
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  background:#0c1228;
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero h1{font-size:2.4rem}
+  .info{grid-template-columns:1fr}
+}
+</style>
 </head>
-<body style="background:#0b0f1a;color:white;font-family:Arial;text-align:center;padding:100px">
-  <h1>🔥 SITE NEXIX FUNCIONANDO 🔥</h1>
-  <p>Se você está vendo isso, o GitHub Pages está OK.</p>
+
+<body>
+
+<section class="hero">
+  <div class="container">
+    <h1>Transformamos imagens <span>em vendas</span></h1>
+    <p>Edição profissional, Inteligência Artificial e Posicionamento Digital</p>
+
+    <div class="btns">
+      <button class="btn">Quero melhorar minhas fotos</button>
+      <button class="btn outline">Conhecer serviços</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container info">
+    <div class="box">
+      <h2>Por que a NEXIX?</h2>
+      <p>Imagens são a primeira venda do seu negócio. Nós elevamos o padrão visual para gerar desejo, cliques e conversões.</p>
+    </div>
+    <div class="box">
+      <h2>O que entregamos</h2>
+      <p>Qualidade de estúdio, IA aplicada e foco total em resultados reais para restaurantes e negócios locais.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:40px">Nossas Soluções</h2>
+    <div class="cards">
+      <div class="card"><h3>Edição de Imagens</h3></div>
+      <div class="card"><h3>IA para Restaurantes</h3></div>
+      <div class="card"><h3>Posicionamento Digital</h3></div>
+      <div class="card"><h3>Identidade Visual</h3></div>
+      <div class="card"><h3>Fotos para Delivery</h3></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 style="text-align:center">Planos e Preços</h2>
+    <div class="pricing" style="margin-top:40px">
+      <div class="price">
+        <h3>Básico</h3>
+        <span>R$ 80</span>
+      </div>
+      <div class="price featured">
+        <h3>Profissional</h3>
+        <span>R$ 160</span>
+      </div>
+      <div class="price">
+        <h3>Premium</h3>
+        <span>R$ 280</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 style="text-align:center">Entre em Contato</h2>
+    <form style="max-width:500px;margin:40px auto">
+      <input placeholder="Seu nome">
+      <input placeholder="Seu e-mail">
+      <textarea rows="4" placeholder="Como podemos ajudar?"></textarea>
+      <button class="btn">Enviar mensagem</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © NEXIX — Todos os direitos reservados
+</footer>
+
 </body>
 </html>
